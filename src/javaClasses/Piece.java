@@ -14,6 +14,7 @@ public abstract class Piece {
     }
 
     abstract boolean canMove(int x, int y);
+    abstract boolean legalMove(Grid grid, int x, int y);
 
     @Override
     public String toString(){

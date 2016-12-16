@@ -24,6 +24,12 @@ public class Pawn extends Piece{
             }
         }
     }
+
+    @Override
+    boolean legalMove(Grid grid, int x, int y) {
+        return false;
+    }
+
     @Override
     public void move(int x, int y){
         super.move(x, y);

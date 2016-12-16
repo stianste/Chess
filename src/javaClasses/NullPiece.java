@@ -9,4 +9,9 @@ public class NullPiece extends Piece {
     boolean canMove(int x, int y) {
         return false;
     }
+
+    @Override
+    boolean legalMove(Grid grid, int x, int y) {
+        return false;
+    }
 }

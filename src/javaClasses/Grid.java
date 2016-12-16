@@ -62,9 +62,9 @@ public class Grid {
         // Player can not beat it's own pieces
         if (from.isWhite() == to.isWhite() && !(to instanceof NullPiece)) return false;
 
-        if(piece.canMove(x, y)){
+        if(piece.canMove(x, y) && piece.legalMove(this, x, y)){
             // Move the piece and leave the field where it stood blank
-            this.grid[y][x] = this.grid[piece.getY()][piece.getX()];
+            this.grid[y][x] = from;
             this.grid[piece.getY()][piece.getX()] = new NullPiece(piece.getX(), piece.getY());
             piece.move(x,y);
 

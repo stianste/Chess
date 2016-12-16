@@ -12,4 +12,9 @@ public class Bishop extends Piece{
         // To move vertically the delta must be the same for both x and y in either direction
         return abs(this.x - x) == abs(this.y - y);
     }
+
+    @Override
+    boolean legalMove(Grid grid, int x, int y) {
+        return false;
+    }
 }

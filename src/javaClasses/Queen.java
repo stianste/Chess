@@ -12,4 +12,9 @@ public class Queen extends Piece{
         // Combine the movement of the rook and the tower
         return (this.x - x == 0 || this.y - y == 0) || (abs(this.x - x) == abs(this.y - y));
     }
+
+    @Override
+    boolean legalMove(Grid grid, int x, int y) {
+        return false;
+    }
 }
