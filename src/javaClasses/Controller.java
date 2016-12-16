@@ -44,7 +44,7 @@ public class Controller implements Initializable {
                 this.handleSelection(x,y);
                 this.selected = true;
             }
-            System.out.println(this.grid.toString());
+            //System.out.println(this.grid.toString());
         });
     }
 

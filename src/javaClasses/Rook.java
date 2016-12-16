@@ -7,6 +7,7 @@ public class Rook extends Piece{
 
     @Override
     boolean canMove(int x, int y) {
-        return false;
+        // Can only move in either x or y direction
+        return this.x - x == 0 || this.y - y == 0;
     }
 }

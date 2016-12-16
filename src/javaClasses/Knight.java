@@ -1,5 +1,7 @@
 package javaClasses;
 
+import static java.lang.Math.abs;
+
 public class Knight extends Piece {
     protected Knight(boolean white, int x, int y) {
         super(white, "K", x, y);
@@ -7,6 +9,6 @@ public class Knight extends Piece {
 
     @Override
     boolean canMove(int x, int y) {
-        return false;
+        return (abs(this.x - x) == 2 && abs(this.y - y) == 1) || (abs(this.x - x) == 1 && abs(this.y - y) == 2);
     }
 }

@@ -4,9 +4,9 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.Pane?>
-<?import sample.Constants?>
+<?import javaClasses.Constants?>
 <?import javafx.scene.shape.Rectangle?>
-<Pane fx:controller="sample.Controller" xmlns:fx="http://javafx.com/fxml" fx:id="mainPane" prefHeight="800" prefWidth="800">
+<Pane fx:controller="javaClasses.Controller" xmlns:fx="http://javafx.com/fxml" fx:id="mainPane" prefHeight="800" prefWidth="800">
     <fx:define>
         <Constants fx:id="quareWidth" fx:constant="squareWidth"/>
         <Constants fx:id="quareHeigth" fx:constant="squareHeight"/>

@@ -54,18 +54,25 @@ public class Grid {
         return this.grid[y][x].toString();
     }
 
-    public void movePiece(Piece piece, int x, int y) {
-        if(piece.canMove(x, y)){
-            // Switch pieces
-            Piece temp = this.grid[piece.getY()][piece.getX()];
-            this.grid[piece.getY()][piece.getX()] = this.grid[y][x];
-            this.grid[y][x] = temp;
+    public boolean movePiece(Piece piece, int x, int y) {
+        System.out.println("Trying to move from " + piece.getX() + " " + piece.getY() + " to " + x + " " + y);
+        Piece from = this.grid[piece.getY()][piece.getX()];
+        Piece to = this.grid[y][x];
 
+        // Player can not beat it's own pieces
+        if (from.isWhite() == to.isWhite() && !(to instanceof NullPiece)) return false;
+
+        if(piece.canMove(x, y)){
+            // Move the piece and leave the field where it stood blank
+            this.grid[y][x] = this.grid[piece.getY()][piece.getX()];
+            this.grid[piece.getY()][piece.getX()] = new NullPiece(piece.getX(), piece.getY());
             piece.move(x,y);
 
             System.out.println("Can move");
+            return true;
         } else {
             System.out.println("Can not move");
+            return false;
         }
     }
     public String toString(){
