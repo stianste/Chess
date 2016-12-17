@@ -1,5 +1,7 @@
 package javaClasses;
 
+import java.util.Objects;
+
 import static java.lang.Math.abs;
 
 public class Bishop extends Piece{
@@ -15,6 +17,12 @@ public class Bishop extends Piece{
 
     @Override
     boolean legalMove(Grid grid, int x, int y) {
-        return false;
+        int dx = this.x - x > 0 ? -1 : 1;
+        int dy = this.y - y > 0 ? -1 : 1;
+
+        for (int i = this.x + dx, j = this.y + dy; i != x && j != y; i += dx, j += dy){
+            if (!Objects.equals(grid.getStringValue(i, j), "BX")) return false;
+        }
+        return true;
     }
 }
